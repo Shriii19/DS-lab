@@ -5,7 +5,7 @@
 | Tool | Version | Download |
 |------|---------|----------|
 | Java JDK | **8 only** (Exp 1, 2, 7 use removed APIs) | [jdk.java.net](https://jdk.java.net/java-se-ri/8-MR6) |
-| Python | 3.x | [python.org](https://www.python.org/downloads/) |
+| Python | 3. | [python.org](https://www.python.org/downloads/) |
 | g++ with OpenMP | any (MinGW on Windows) | [winlibs.com](https://winlibs.com/) |
 
 > **Why code won't run on your PC:**
