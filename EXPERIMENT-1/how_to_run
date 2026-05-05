@@ -1,13 +1,37 @@
+EXPERIMENT-1: Java RMI - Hello World
+=====================================
+
+REQUIREMENT:
+- Java JDK must be installed (java -version to check)
+- You need 3 separate terminal windows open in this folder
+
 Steps to Run:
 
 1. Compile all files:
-javac Hello.java HelloImpl.java Server.java Client.java
+   javac Hello.java HelloImpl.java Server.java Client.java
 
-2. Start RMI registry (in a separate terminal):
-rmiregistry
+   ERROR: 'javac' is not recognized?
+   >> Java is not installed or not added to PATH.
+   >> Install JDK from https://www.oracle.com/java/technologies/downloads/
 
-3. Run the Server (in a separate terminal):
-java Server
+2. Start RMI Registry (Terminal 1 — keep it open):
+   rmiregistry
 
-4. Run the Client (in another terminal):
-java Client
+   >> Do NOT close this window. It must stay running.
+
+3. Run the Server (Terminal 2 — keep it open):
+   java Server
+
+   ERROR: Address already in use?
+   >> Another program is using the port. Restart your computer and try again.
+
+   ERROR: ClassNotFoundException?
+   >> Make sure you compiled first (Step 1) and you are in the correct folder.
+
+4. Run the Client (Terminal 3):
+   java Client
+
+   ERROR: Connection refused?
+   >> RMI registry or Server is not running. Make sure Steps 2 and 3 are done first.
+
+NOTE: Always start in this order: rmiregistry → Server → Client

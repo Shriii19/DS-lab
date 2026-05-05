@@ -1,17 +1,54 @@
-EXPERIMENT-6: Leader Election using Bully and Ring Algorithms
+EXPERIMENT-6: Leader Election — Bully and Ring Algorithms
+==========================================================
+
+REQUIREMENT:
+- Java JDK must be installed
+- Check: java -version
 
 
-***Bully Algorithm***
-1.Compile:
-javac BullyAlgorithm.java
+*** BULLY ALGORITHM ***
+-----------------------
 
-2.Run:
-java BullyAlgorithm
+1. Compile:
+   javac BullyAlgorithm.java
+
+2. Run:
+   java BullyAlgorithm
+
+How to use:
+- Enter the number of processes (e.g. 4)
+  >> Processes are automatically numbered 1, 2, 3, 4 ...
+- Enter a process number to crash (e.g. 3)
+  >> This simulates that process 3 has failed
+- Enter the process number that starts the election (e.g. 1)
+  >> Must be a number that is NOT crashed
+  >> The program will show election messages and announce the leader
+
+Common mistake: Entering the crashed process as the initiator
+>> The crashed process cannot start the election. Enter a different process.
 
 
-***Ring Algorithm***
-1.Compile:
-javac RingAlgorithm.java
+*** RING ALGORITHM ***
+----------------------
 
-2.Run
-java RingAlgorithm
+1. Compile:
+   javac RingAlgorithm.java
+
+2. Run:
+   java RingAlgorithm
+
+How to use:
+- Enter the number of processes (e.g. 4)
+- Enter a process number to crash (e.g. 2)
+- Enter the initiator process number (e.g. 1)
+  >> The election message will travel around the ring
+  >> Active processes add their ID to the message
+  >> The process with the highest ID becomes the leader
+
+Common mistake: Entering a process number larger than total processes
+>> If you enter 4 processes, valid numbers are 1 to 4 only.
+
+
+ERROR (both programs):
+- 'javac' is not recognized? >> Install JDK and add to PATH.
+- ArrayIndexOutOfBoundsException? >> You entered a process number outside the valid range.

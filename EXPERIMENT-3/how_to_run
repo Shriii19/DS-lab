@@ -1,10 +1,35 @@
-EXPERIMENT-3: Sum of N Elements using OpenMP
+EXPERIMENT-3: Parallel Sum using OpenMP (C++)
+=============================================
+
+REQUIREMENT:
+- g++ compiler must be installed
+- On Windows: Install MinGW-w64 from https://www.mingw-w64.org/
+  During install, select Architecture: x86_64 and add it to PATH
+- Check if installed: g++ --version
 
 Steps to Run:
 
-1. Compile the C++ program (Make sure you have OpenMP installed — usually comes with g++):
-g++ -fopenmp distributed_sum.cpp -o sum.exe 
+1. Compile the C++ program:
+   g++ -fopenmp distributed_sum.cpp -o sum.exe
+
+   ERROR: 'g++' is not recognized?
+   >> g++ is not installed or not in PATH.
+   >> Install MinGW and restart your terminal after installation.
+
+   ERROR: fopenmp: No such file?
+   >> Your g++ version does not support OpenMP.
+   >> Reinstall MinGW-w64 (the 64-bit version includes OpenMP by default).
 
 2. Run the compiled program:
- sum.exe 
+   On Windows:  .\sum.exe
+   On Linux/Mac: ./sum.exe
 
+   ERROR: sum.exe is not recognized?
+   >> Use .\sum.exe (with dot-backslash) on Windows PowerShell.
+
+   >> The program will ask: Enter number of elements (N)
+   >> Then: Enter elements (type numbers separated by Enter)
+   >> It will show each thread's partial sum and the final total.
+
+NOTE: The number of threads used depends on your CPU cores.
+NOTE: Output order of threads may vary each run — that is normal.

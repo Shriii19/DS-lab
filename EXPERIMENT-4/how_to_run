@@ -1,7 +1,46 @@
-EXPERIMENT-4: Berkeley Algorithm for Clock Synchronization
+EXPERIMENT-4: Berkeley Clock Synchronization (Python)
+======================================================
 
-1.Start the Server (Master)
-python server.py
+REQUIREMENT:
+- Python 3 must be installed
+- Check: python --version  (should show Python 3.x)
+- No extra libraries needed (uses built-in socket and time modules)
+- You need 4 separate terminal windows open in this folder
 
-2.Start multiple Clients (in separate terminals):
-python client.py
+Steps to Run:
+
+1. Start the Server first (Terminal 1 — keep it open):
+   python Server.py
+
+   >> The server waits for exactly 3 clients to connect.
+   >> Do NOT type anything yet. It will print "Master Server Started..."
+
+   ERROR: python is not recognized?
+   >> Install Python 3 from https://www.python.org/downloads/
+   >> During install, CHECK the box "Add Python to PATH"
+
+   ERROR: Address already in use?
+   >> Change PORT = 5000 in both Server.py and Client.py to another number like 5001.
+
+2. Start Client 1 (Terminal 2):
+   python Client.py
+
+3. Start Client 2 (Terminal 3):
+   python Client.py
+
+4. Start Client 3 (Terminal 4):
+   python Client.py
+
+   >> After the 3rd client connects, the server will automatically:
+   >>   - Collect all times
+   >>   - Calculate the average
+   >>   - Send adjustments to each client
+
+   ERROR: Connection refused?
+   >> Server is not running. Start Server.py first (Step 1).
+
+   ERROR: File not found?
+   >> File names are capital: Server.py and Client.py (not server.py or client.py)
+
+NOTE: Start Server FIRST, then open 3 separate Client terminals.
+NOTE: All 3 clients must connect before anything happens.

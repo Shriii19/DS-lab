@@ -1,10 +1,50 @@
-EXPERIMENT-7: Simple Web Service using JAX-WS
+EXPERIMENT-7: Web Service using JAX-WS (SOAP)
+=============================================
 
-1.Compile all files:
-javac -d . CalculatorInterface.java CalculatorService.java CalculatorPublisher.java CalculatorClient.java
+REQUIREMENT:
+- Java JDK 8 must be installed (JAX-WS was REMOVED in Java 11+)
+- Check your version: java -version
+- If version is 11 or above, this will NOT work without extra libraries.
+  Use Java 8: https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
+- You need 2 separate terminal windows open in this folder
 
-2.Start the Web Service (Publisher):
-java calculator.CalculatorPublisher
+Steps to Run:
 
-3.Run the Client (in another terminal):
-java calculator.CalculatorClient
+1. Compile all files (this creates a 'calculator' subfolder automatically):
+   javac -d . CalculatorInterface.java CalculatorService.java CalculatorPublisher.java CalculatorClient.java
+
+   ERROR: 'javac' is not recognized?
+   >> Install JDK 8 and add to PATH.
+
+   ERROR: package javax.jws does not exist?
+   >> You are using Java 11 or later. JAX-WS is not included.
+   >> Switch to Java 8, or add the JAX-WS dependency manually.
+
+   ERROR: cannot find symbol @WebService?
+   >> Same as above — switch to Java 8.
+
+2. Start the Web Service Publisher (Terminal 1 — keep it open):
+   java calculator.CalculatorPublisher
+
+   >> Wait until you see: "Web Service running at:"
+   >> and: "http://localhost:8080/calculator?wsdl"
+   >> Do NOT close this window.
+
+   ERROR: Address already in use (port 8080)?
+   >> Another program is using port 8080.
+   >> Change 8080 to 9090 in CalculatorPublisher.java and CalculatorClient.java, then recompile.
+
+3. Run the Client (Terminal 2 — after Publisher is running):
+   java calculator.CalculatorClient
+
+   >> Should print: Result = 30
+
+   ERROR: Connection refused / WebServiceException?
+   >> Publisher is not running. Make sure Step 2 is done and still open.
+
+   ERROR: Failed to access the WSDL?
+   >> Open a browser and go to http://localhost:8080/calculator?wsdl
+   >> If it doesn't open, the Publisher didn't start properly.
+
+NOTE: Start Publisher FIRST, then run the Client.
+NOTE: You can verify the service is running by visiting http://localhost:8080/calculator?wsdl in a browser.

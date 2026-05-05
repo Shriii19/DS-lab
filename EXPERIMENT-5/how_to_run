@@ -1,7 +1,37 @@
-EXPERIMENT-5: Token Ring Based Mutual Exclusion
+EXPERIMENT-5: Token Ring Mutual Exclusion
+==========================================
 
-1.Compile
-javac TokenRing.java
+REQUIREMENT:
+- Java JDK must be installed
+- Check: java -version
 
-2.Run:
-java TokenRing
+Steps to Run:
+
+1. Compile:
+   javac TokenRing.java
+
+   ERROR: 'javac' is not recognized?
+   >> Java is not installed or not in PATH.
+   >> Install JDK from https://www.oracle.com/java/technologies/downloads/
+
+2. Run:
+   java TokenRing
+
+How to use the program:
+- First, enter the number of processes (e.g. type 3 and press Enter)
+- The program shows which process currently holds the token
+- Type 1 and press Enter → that process enters the Critical Section
+- Type 0 and press Enter → that process skips its turn
+- The token automatically moves to the next process after each turn
+- The program runs in a loop (use Ctrl+C to stop)
+
+Example:
+   Enter number of processes: 3
+   Current token with Process 0
+   Do you want to enter critical section? (1-Yes / 0-No): 1
+   Process 0 entering Critical Section...
+   Process 0 leaving Critical Section...
+   Current token with Process 1
+   Do you want to enter critical section? (1-Yes / 0-No): 0
+   Current token with Process 2
+   ...

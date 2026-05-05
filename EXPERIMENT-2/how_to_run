@@ -1,18 +1,41 @@
-EXPERIMENT-2: Distributed Application using CORBA (Calculator)
+EXPERIMENT-2: CORBA - Calculator
+=================================
+
+REQUIREMENT:
+- Java JDK 8 must be installed (CORBA was REMOVED in Java 11+)
+- Check your version: java -version
+- If version is 11 or above, this will NOT work without extra setup.
+  Use Java 8: https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
+- You need 3 separate terminal windows open in this folder
 
 Steps to Run:
 
-1.Compile IDL file:
-idlj -fall Calculator.idl <- run this in terminal
+1. Compile IDL file (generates CalculatorModule folder automatically):
+   idlj -fall Calculator.idl
 
-2.Compile Java files
-javac CalculatorModule/*.java *.java  <- run this in terminal
+   ERROR: 'idlj' is not recognized?
+   >> You are not using Java 8. Install JDK 8 and set it as default.
 
-3.Start Naming Service (in one terminal)
-tnameserv -ORBInitialPort 1050 <- run this in terminal
+2. Compile all Java files:
+   javac CalculatorModule/*.java *.java
 
-4.Start Server (in new terminal)
-java Server -ORBInitialPort 1050 <- run this in terminal
+   ERROR: cannot find symbol / package does not exist?
+   >> Step 1 was not run or failed. Run Step 1 again first.
 
-5.Start Client (in new terminal)
-java Client -ORBInitialPort 1050 <- run this in terminal
+3. Start Naming Service (Terminal 1 — keep it open):
+   tnameserv -ORBInitialPort 1050
+
+   ERROR: 'tnameserv' is not recognized?
+   >> You are not using Java 8. This tool was removed in Java 11+.
+
+   ERROR: Port 1050 already in use?
+   >> Change 1050 to another number like 1060 and use that number in Steps 4 and 5 too.
+
+4. Start the Server (Terminal 2 — keep it open):
+   java Server -ORBInitialPort 1050
+
+5. Start the Client (Terminal 3):
+   java Client -ORBInitialPort 1050
+
+NOTE: Always start in this order: tnameserv → Server → Client
+NOTE: Use the SAME port number in Steps 3, 4, and 5.
