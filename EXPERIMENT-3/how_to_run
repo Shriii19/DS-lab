@@ -1,0 +1,10 @@
+EXPERIMENT-3: Sum of N Elements using OpenMP
+
+Steps to Run:
+
+1. Compile the C++ program (Make sure you have OpenMP installed — usually comes with g++):
+g++ -fopenmp distributed_sum.cpp -o sum.exe 
+
+2. Run the compiled program:
+ sum.exe 
+

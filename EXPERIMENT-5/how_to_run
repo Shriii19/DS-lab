@@ -1,0 +1,7 @@
+EXPERIMENT-5: Token Ring Based Mutual Exclusion
+
+1.Compile
+javac TokenRing.java
+
+2.Run:
+java TokenRing

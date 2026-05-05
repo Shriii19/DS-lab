@@ -1,0 +1,17 @@
+EXPERIMENT-6: Leader Election using Bully and Ring Algorithms
+
+
+***Bully Algorithm***
+1.Compile:
+javac BullyAlgorithm.java
+
+2.Run:
+java BullyAlgorithm
+
+
+***Ring Algorithm***
+1.Compile:
+javac RingAlgorithm.java
+
+2.Run
+java RingAlgorithm

@@ -1,0 +1,7 @@
+EXPERIMENT-4: Berkeley Algorithm for Clock Synchronization
+
+1.Start the Server (Master)
+python server.py
+
+2.Start multiple Clients (in separate terminals):
+python client.py

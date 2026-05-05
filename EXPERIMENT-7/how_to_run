@@ -1,0 +1,10 @@
+EXPERIMENT-7: Simple Web Service using JAX-WS
+
+1.Compile all files:
+javac -d . CalculatorInterface.java CalculatorService.java CalculatorPublisher.java CalculatorClient.java
+
+2.Start the Web Service (Publisher):
+java calculator.CalculatorPublisher
+
+3.Run the Client (in another terminal):
+java calculator.CalculatorClient

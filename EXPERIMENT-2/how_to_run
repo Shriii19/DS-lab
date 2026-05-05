@@ -1,0 +1,18 @@
+EXPERIMENT-2: Distributed Application using CORBA (Calculator)
+
+Steps to Run:
+
+1.Compile IDL file:
+idlj -fall Calculator.idl <- run this in terminal
+
+2.Compile Java files
+javac CalculatorModule/*.java *.java  <- run this in terminal
+
+3.Start Naming Service (in one terminal)
+tnameserv -ORBInitialPort 1050 <- run this in terminal
+
+4.Start Server (in new terminal)
+java Server -ORBInitialPort 1050 <- run this in terminal
+
+5.Start Client (in new terminal)
+java Client -ORBInitialPort 1050 <- run this in terminal

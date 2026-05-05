@@ -1,0 +1,8 @@
+module CalculatorModule {
+    interface Calculator {
+        long add(in long a, in long b);
+        long sub(in long a, in long b);
+        long mul(in long a, in long b);
+        float div(in long a, in long b);
+    };
+};

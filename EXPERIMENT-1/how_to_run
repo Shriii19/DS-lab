@@ -1,0 +1,13 @@
+Steps to Run:
+
+1. Compile all files:
+javac Hello.java HelloImpl.java Server.java Client.java
+
+2. Start RMI registry (in a separate terminal):
+rmiregistry
+
+3. Run the Server (in a separate terminal):
+java Server
+
+4. Run the Client (in another terminal):
+java Client
